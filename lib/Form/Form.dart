@@ -86,7 +86,9 @@ class MyFormState extends State {
               child: Text('Проверить'),
               color: Colors.blue,
               textColor: Colors.white,
-            )
+
+            ),
+            RaisedButton(onPressed: (){Navigator.pushNamed(context, '/list');}, child: Text('Открыть список')),
           ],
         ),
       ),

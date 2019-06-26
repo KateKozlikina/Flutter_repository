@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class MyBody extends StatefulWidget {
+class ListPow extends StatefulWidget {
   @override
-  createState() => MyBodyState();
+  createState() => ListPowState();
 }
 
-class MyBodyState extends State<MyBody> {
+class ListPowState extends State<ListPow> {
   List<int> _array = [];
 
   Widget itemBuilder(context, i) {
@@ -20,7 +20,15 @@ class MyBodyState extends State<MyBody> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: itemBuilder
+    //return ListView.builder(itemBuilder: itemBuilder);
+    return Scaffold(
+      appBar: AppBar(title: Text('Второе окно')),
+      body: ListView.builder(itemBuilder: itemBuilder),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.pop(context);
+      },
+        child: Text('Назад'),
+      ),
     );
   }
 }
